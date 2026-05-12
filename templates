@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TrashLens</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="phone-frame">
+
+    <div class="app">
+
+        <div class="top-bar">
+            <h1>♻ TrashLens</h1>
+            <p>Smart Recycling Assistant</p>
+        </div>
+
+        <div class="card">
+
+            <form method="POST">
+
+                <input type="text"
+                       name="item"
+                       placeholder="Type an item...">
+
+                <button type="submit">
+                    Analyze Waste
+                </button>
+
+            </form>
+
+        </div>
+
+        {% if result %}
+
+        <div class="result-card">
+
+            <h2>Result</h2>
+
+            <p>{{ result }}</p>
+
+        </div>
+
+        {% endif %}
+
+        <div class="tips">
+
+            <h3>Eco Tips</h3>
+
+            <ul>
+                <li>🌱 Reuse bottles when possible</li>
+                <li>♻ Separate plastic correctly</li>
+                <li>📦 Flatten cardboard boxes</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
